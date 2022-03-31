@@ -1,16 +1,21 @@
-# Instalação
+# Template para Projeto Nodejs
+
+## Principais Tecnologias usadas
+
+- Node.js
+- Express
+- Typeorm
+- Typescript
+- Babel
+
+#
+
+## Configuração do typeorm
+
+Criar um arquivo .env e substituir valores com suas credenciais do banco de dados.
 
 ```bash
-$ yarn init
-$ yarn add -D typescript
-$ npx tsc --init
-$ yarn add ts-node-dev -D
-$ yarn add -D tsconfig-paths
-$ yarn add -D @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript label-plugin-module-resolver
-```
-
-```bash
-KEY=your_key
+JWT_KEY=your_key
 TYPEORM_CONNECTION=database_type
 TYPEORM_HOST=database_host
 TYPEORM_PORT=database_port
@@ -21,4 +26,30 @@ TYPEORM_MIGRATIONS=src/database/migrations/*.ts
 TYPEORM_MIGRATIONS_DIR=src/database/migrations
 TYPEORM_ENTITIES=src/entities/*.ts
 TYPEORM_ENTITIES_DIR=src/entities
+```
+
+CLI do typeorm
+
+```bash
+$ yarn typeorm
+```
+
+# Comandos básicos
+
+## Iniciar desenvolvimento
+
+```bash
+$ yarn dev
+```
+
+## Criar uma build
+
+```bash
+$ yarn build
+```
+
+## Iniciar projeto
+
+```bash
+$ yarn start
 ```

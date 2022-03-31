@@ -12,10 +12,10 @@ export function AuthenticateUser(
 
   const [_, token] = authorization.split(" ");
 
-  if (!process.env.API_KEY) return;
+  if (!process.env.JWT_KEY) return;
 
   try {
-    const payload = verify(token, process.env.API_KEY);
+    const payload = verify(token, process.env.JWT_KEY);
     request.user_id = Number(payload.sub);
     next();
   } catch (error) {

@@ -10,7 +10,7 @@ interface IAuthenticateUserService {
 
 class AuthenticateUserService {
   async execute({ email, password }: IAuthenticateUserService) {
-    if (!process.env.KEY) throw new Error("Error: internal");
+    if (!process.env.JWT_KEY) throw new Error("Error: internal");
 
     if (!email) throw new Error("Email is required");
     if (!password) throw new Error("Password is required");
@@ -29,7 +29,7 @@ class AuthenticateUserService {
       email: user.email,
     };
 
-    const token = sign(payload, process.env.KEY, {
+    const token = sign(payload, process.env.JWT_KEY, {
       subject: String(user.id),
       expiresIn: "1d",
     });
